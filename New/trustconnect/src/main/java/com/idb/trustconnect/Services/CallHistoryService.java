@@ -21,7 +21,7 @@ public class CallHistoryService {
     }
 
     public List<CallHistory> retrieveOnePage(Integer pageNumber, Integer pageSize) {
-        Page<CallHistory> page = repo.findAll(PageRequest.of(pageNumber, pageNumber, Sort.by("dateCreated").descending()));
+        Page<CallHistory> page = repo.findAll(PageRequest.of(pageNumber, pageSize, Sort.by("dateCreated").descending()));
 
         List<CallHistory> callHistories = page.getContent();
 
